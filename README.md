@@ -5,7 +5,7 @@
 ## Скачать и проверить
 
 - **Весь проект:** [скачать ZIP ветки main](https://github.com/hor1zon94/Besogon/archive/refs/heads/main.zip).
-- **Готовые архивы концептов и моделирования:** [GitHub Releases](https://github.com/hor1zon94/Besogon/releases).
+- **Готовые архивы:** [референсы моделей — ZIP](https://github.com/hor1zon94/Besogon/raw/refs/heads/main/downloads/BESOGON_3D_MODEL_REFERENCES.zip) · [утверждённый визуал — ZIP](https://github.com/hor1zon94/Besogon/raw/refs/heads/main/downloads/BESOGON_APPROVED_VISUAL.zip).
 - **HTML-прототип:** после распаковки открыть [`prototype/besogon.html`](prototype/besogon.html) в браузере. Сервер и установка зависимостей не нужны.
 - **Референсы моделей:** после распаковки открыть [`references/models/GALLERY.html`](references/models/GALLERY.html). Галерея работает локально.
 
@@ -41,6 +41,7 @@ docs/                  требования, игровой замысел, ут
 references/models/     отдельные PNG-листы, галерея, размеры и требования к экспорту
 godot/                 место для будущего Godot-проекта
 tools/                 проверки и сборка скачиваемых архивов
+downloads/             готовые ZIP-комплекты для скачивания
 ```
 
 - [Требования HTML-прототипа](docs/PROTOTYPE_SPEC.md).
@@ -59,10 +60,10 @@ python tools/package_references.py --check
 
 Для первой команды нужен Node.js, для второй — Python 3; дополнительные пакеты не требуются. Проверки HTML покрывают симуляцию, ввод, тайминги, урон, переходы, завершение и перезапуск, а вызовы Canvas проверяются через заглушку. **Визуальная проверка в браузере и плейтест пока не выполнены.**
 
-Пересобрать архивы для Releases:
+Пересобрать скачиваемые архивы:
 
 ```sh
 python tools/package_references.py
 ```
 
-Архивы появятся в `build/release/`. Исходные изображения доступны в обычном Git; для скачивания и просмотра Git LFS не нужен.
+Архивы появятся в `build/release/`; готовые версии для скачивания находятся в `downloads/`. Прямая загрузка вложений GitHub Releases в текущем окружении отклоняется с HTTP 401, поэтому архивы хранятся в репозитории. Исходные изображения доступны в обычном Git; для скачивания и просмотра Git LFS не нужен.

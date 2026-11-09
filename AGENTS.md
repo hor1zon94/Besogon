@@ -10,6 +10,7 @@ Keep project source, approved art documentation, modeling references, and the fu
 - `references/models/`: standalone modeling reference pack, PNG sheets, dimensions, gallery, and Godot export requirements.
 - `godot/`: reserved location for the future actual Godot project. Currently it contains a status README, not a runnable Godot project.
 - `tools/`: reproducible checks and release packaging tools.
+- `downloads/`: the ready-to-download model-reference and approved-visual ZIP archives.
 
 ## Current scope and status
 
@@ -24,6 +25,6 @@ Keep project source, approved art documentation, modeling references, and the fu
 - For HTML changes, run `node tools/verify_html.cjs`. These are simulation and mocked Canvas API checks; they do not prove browser rendering or game feel.
 - Run `python tools/package_references.py --check` after changing model pack files, and check relative links when moving documents.
 - Keep original PNGs in ordinary Git so source ZIP downloads include real images. No LFS pointers are configured in this initial repository.
-- Put generated release ZIPs in GitHub Releases instead of duplicating them in Git history. `python tools/package_references.py` rebuilds the two reference archives under ignored `build/release/`.
+- Prefer GitHub Release attachments when supported. In this environment the release upload host returned HTTP 401 while ordinary Git pushes work, so the current delivery uses tracked ZIPs in `downloads/`. Keep these downloadable bundles in sync when changing references. `python tools/package_references.py` rebuilds both archives under ignored `build/release/`; copy the finished archives into `downloads/` for delivery. A release page may link to the tracked files without attachments.
 - Never commit credentials, Godot's generated `.godot/` cache, temporary execution files, or machine-local paths in project documentation.
 - Update the root README with what can actually be run and any material verification limits.
