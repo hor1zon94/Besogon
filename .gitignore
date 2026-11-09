@@ -1,0 +1,17 @@
+# Godot import cache and local editor state
+.godot/
+.import/
+export_credentials.cfg
+*.translation
+# Local builds, downloadable release bundles and scratch work
+build/
+exports/
+work/
+# Machine-specific files and credentials
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+.env
+.env.*
+!.env.example
